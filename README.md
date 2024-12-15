@@ -7,7 +7,7 @@ docker build -t pass-argument
 docker run pass-argument Hi
 
 # push the docker file \ RepoName should be same as docker name with userid
-docker push <username>/<reponame>
+docker push username/reponame
 
 # this is the base image
 FROM python:3.9
@@ -16,8 +16,8 @@ FROM python:3.9
 COPY ./src/pass-argument.py /src/pass-argument.py
 
 # remove Image and pull new from REPO
-docker rmi <username>/<repo>:latest 
-docker pull <username>/<repo>
+docker rmi username/repo:latest 
+docker pull username/repo
 
 # Entry point or CMD run these commands inside Docker
 ENTRYPOINT ["python","./src/pass-argument.py"]
